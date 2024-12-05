@@ -10,6 +10,12 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #000;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
         }
         header {
             background-color: #333;
@@ -24,7 +30,7 @@
         nav a {
             margin: 0 1em;
             text-decoration: none;
-            color: #333;
+            color: inherit;
         }
         nav a:hover {
             text-decoration: underline;
@@ -35,6 +41,10 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        .dark-mode main {
+            background-color: #444;
         }
         footer {
             text-align: center;
@@ -45,12 +55,30 @@
             width: 100%;
             bottom: 0;
         }
+        .dark-mode footer {
+            background-color: #222;
+        }
+        .mode-switch {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .dark-mode .mode-switch {
+            background-color: #444;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Rockingham Chili</h1>
-        <h1>COMING SOON</h1>
+        <h2>COMING SOON</h2>
     </header>
     <nav>
         <a href="#">Home</a>
@@ -69,12 +97,14 @@
     </main>
     <footer>
         <p>&copy; 2024 Rockingham Chili</p>
+        <p>All rights reserved</p>
     </footer>
     <button class="mode-switch" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-    
+
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
         }
+    </script>
 </body>
 </html>
